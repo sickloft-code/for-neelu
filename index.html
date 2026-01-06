@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Neelu 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&family=Homemade+Apple&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#2f2a25;
+  --muted:#6f665d;
+  --paper:#fffdf9;
+  --brown:#c8b6a6;
+  --tape:#e6d8c9;
+  --shadow:rgba(0,0,0,.12);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+  line-height:1.9;
+  background:#fff8ef;
+}
+
+/* vignette */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 0 120px rgba(0,0,0,.12);
+  z-index:2;
+}
+
+/* ================= SLIDE 1 — COVER ================= */
+.start-screen{
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,248,239,.55), rgba(255,248,239,.85)),
+    url('photo1.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  text-align:center;
+  transition:1s ease;
+}
+
+.start-inner{
+  max-width:560px;
+  padding:80px 40px;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);
+  border-radius:30px;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.start-inner h1{
+  font-family:'DM Serif Display',serif;
+  font-size:58px;
+  margin-bottom:18px;
+}
+
+.start-inner p{
+  font-size:18px;
+  color:#5f564d;
+  margin-bottom:26px;
+}
+
+.start-inner .handwritten{
+  font-size:22px;
+  margin-bottom:42px;
+}
+
+.start-btn{
+  padding:16px 46px;
+  border:none;
+  border-radius:50px;
+  background:var(--brown);
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+/* ================= SLIDE 2 — COVER CONTINUATION ================= */
+.cover-section{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(255,248,239,.7), rgba(255,248,239,.95)),
+    url('photo1.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:160px 24px 120px;
+}
+
+.cover-inner{
+  max-width:760px;
+  text-align:center;
+}
+
+/* ================= WRAPPER ================= */
+.wrapper{
+  max-width:760px;
+  margin:auto;
+  padding:140px 24px 0;
+}
+
+/* fade */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.fade.show{opacity:1;transform:none}
+
+/* text */
+h1,h2{
+  font-family:'DM Serif Display',serif;
+  font-weight:400;
+}
+h1{font-size:46px}
+h2{font-size:30px;margin:90px 0 18px}
+
+p{
+  color:var(--muted);
+  font-size:17px;
+  margin-bottom:14px;
+}
+
+.handwritten{
+  font-family:'Homemade Apple',cursive;
+  font-size:20px;
+  margin:28px 0;
+}
+
+.fun{
+  font-size:15px;
+  font-style:italic;
+  color:#7a6f65;
+}
+
+/* polaroids */
+.polaroid{
+  background:var(--paper);
+  padding:10px 10px 24px;
+  box-shadow:0 20px 40px var(--shadow);
+  margin:60px 0;
+  position:relative;
+}
+.polaroid img{width:100%}
+.polaroid span{
+  font-size:13px;
+  color:#777;
+  display:block;
+  margin-top:8px;
+  text-align:center;
+}
+.polaroid::before,
+.polaroid::after{
+  content:"";
+  position:absolute;
+  width:60px;
+  height:20px;
+  background:var(--tape);
+  top:-10px;
+}
+.polaroid::before{left:20px;transform:rotate(-5deg)}
+.polaroid::after{right:20px;transform:rotate(4deg)}
+
+.small{width:160px}
+.medium{width:240px}
+.big{
+  width:90%;
+  max-width:520px;
+  margin:90px auto;
+  transform:rotate(1deg);
+}
+.big::after{
+  content:"✨";
+  position:absolute;
+  top:14px;
+  right:18px;
+  font-size:22px;
+  animation:sparkle 2.5s infinite ease-in-out;
+}
+@keyframes sparkle{
+  0%,100%{opacity:.4;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.4)}
+}
+
+/* paper */
+.paper{
+  background:var(--paper);
+  padding:38px;
+  border-radius:20px;
+  box-shadow:0 14px 30px rgba(0,0,0,.08);
+  margin:50px 0;
+}
+
+/* typewriter */
+.tw::after{
+  content:"▍";
+  margin-left:2px;
+  animation: blink 1s infinite;
+}
+.tw.done::after{content:""}
+
+@keyframes blink{
+  0%,50%,100%{opacity:1}
+  25%,75%{opacity:0}
+}
+
+/* END */
+.finale{
+  margin:220px -24px 0;
+  padding:200px 24px 220px;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,.95), rgba(241,227,214,.95)),
+    linear-gradient(180deg, #f1e3d6, #fff8ef);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="start-screen" id="startScreen">
+  <div class="start-inner">
+    <h1 class="tw">Hey Birthday Girl 🎉</h1>
+    <p class="tw">Nothing is more beautiful than this.</p>
+    <div class="handwritten tw">today is about you 🤍</div>
+    <button class="start-btn" onclick="startExperience()">Play music & begin 🎵</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SLIDE 2 -->
+<section class="cover-section">
+  <div class="cover-inner">
+    <h1 class="fade tw">Hey Neelu 🌸</h1>
+
+    <p class="fade tw">
+      I just want you to know something before anything else —
+      you’re genuinely one of the nicest people I know.
+    </p>
+
+    <p class="fade tw">
+      Talking to you feels easy, comforting, and real.
+      You have this calm, positive energy that makes everything feel lighter.
+    </p>
+
+    <p class="fade tw handwritten">
+      you have no idea how much that means to me.
+    </p>
+  </div>
+</section>
+
+<!-- REST OF STORY -->
+<div class="wrapper">
+
+  <p class="fun fade tw">Also yes — this page exists because you matter.</p>
+
+  <div class="polaroid big fade">
+    <img src="photo2.jpg">
+    <span>main character energy, obviously</span>
+  </div>
+
+  <div class="paper fade">
+    <p class="tw">
+      You’re genuinely sweet, naturally positive, and incredibly easy to talk to.
+      You listen properly, you understand deeply,
+      and you make people feel seen without even trying.
+    </p>
+  </div>
+
+  <div class="polaroid medium fade">
+    <img src="photo3.jpg">
+    <span>good vibes confirmed</span>
+  </div>
+
+  <p class="fun fade tw">
+    If being a good human was a talent, you’d be winning awards.
+  </p>
+
+  <div class="polaroid big fade">
+    <img src="photo4.jpg">
+    <span>absolutely gorgeous — touchwood 🧿</span>
+  </div>
+
+  <div class="polaroid medium fade">
+    <img src="photo5.jpg">
+    <span>never change this vibe</span>
+  </div>
+
+  <div class="paper fade">
+    <p class="tw">
+      Some people look beautiful in pictures.
+      Some people carry beauty in the way they exist.
+      You do both — effortlessly.
+    </p>
+  </div>
+
+  <div class="polaroid big fade">
+    <img src="photo6.jpg">
+    <span>exactly as you are — perfect 🤍</span>
+  </div>
+
+</div>
+
+<div class="finale fade">
+  <h2 class="tw">Happy Birthday, Neelu 🎂</h2>
+
+  <p class="tw">
+    Thank you for being there for me when nobody truly was.
+    Thank you for staying, for listening, and for caring —
+    especially during moments when I was at my lowest.
+  </p>
+
+  <p class="tw">
+    May God bless you with every happiness you have ever wished for.
+    May your life be filled with peace, love, good health,
+    and dreams that come true one by one.
+  </p>
+
+  <p class="big-line tw">
+    I hope I get to be the first person
+    who celebrates your birthday every year.
+  </p>
+
+  <div class="handwritten tw">
+    wishing you the best life, always 🤍
+  </div>
+</div>
+
+<script>
+const music=document.getElementById('bgMusic');
+const start=document.getElementById('startScreen');
+
+function startExperience(){
+  music.play().catch(()=>{});
+  start.style.opacity='0';
+  start.style.visibility='hidden';
+}
+
+/* TYPEWRITER */
+const twEls=document.querySelectorAll('.tw');
+twEls.forEach(el=>{
+  el.dataset.text=el.textContent;
+  el.textContent='';
+});
+
+function typeText(el){
+  let i=0;
+  const txt=el.dataset.text;
+  const speed=30;
+  const timer=setInterval(()=>{
+    el.textContent+=txt.charAt(i);
+    i++;
+    if(i>=txt.length){
+      clearInterval(timer);
+      el.classList.add('done');
+    }
+  },speed);
+}
+
+const twObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !e.target.classList.contains('done')){
+      typeText(e.target);
+      twObs.unobserve(e.target);
+    }
+  });
+},{threshold:.35});
+twEls.forEach(el=>twObs.observe(el));
+
+/* fade */
+const fadeObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+      fadeObs.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll('.fade').forEach(el=>fadeObs.observe(el));
+</script>
+
+</body>
+</html>
